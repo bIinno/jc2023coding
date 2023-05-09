@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<link href="https://fonts.cdnfonts.com/css/8bit-wonder" rel="stylesheet">
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Space Invaders</title>
+    <style>
+        #learn{
+            font-family: '8BIT WONDER', sans-serif;
+            position: absolute;
+            /* set the position to absolute */
+            top: 90%;
+            /* position the element at the center of the screen vertically */
+            left: 50%;
+            /* position the element at the center of the screen horizontally */
+            transform: translate(-50%, -50%);
+
+            color: #BF40BF;
+            font-size: 24px;
+            text-decoration: underline;
+        }
+        body {
+            user-select: none;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .invader {
+            position: absolute;
+            background-image: url('../img/invader.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 5%;
+            height: 5%;
+        }
+
+        #player {
+            position: absolute;
+            background-image: url('../img/player.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 5%;
+            height: 5%;
+        }
+
+        nav {
+            font-family: '8BIT WONDER', sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 12px;
+            color: black;
+        }
+
+        nav ul li a:hover {
+            background-color: black;
+            color: #fff;
+        }
+
+        .fade {
+            font-family: '8BIT WONDER', sans-serif;
+            position: absolute;
+            /* set the position to absolute */
+            top: 50%;
+            /* position the element at the center of the screen vertically */
+            left: 50%;
+            /* position the element at the center of the screen horizontally */
+            transform: translate(-50%, -50%);
+            /* center the element properly */
+            animation: fade 2s infinite;
+            color: white;
+            font-size: 72px;
+            text-decoration: none;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <hr>
+
+    <div id="game-container">
+        <div class="invader" style="left: 20%; top: 5%;"></div>
+        <div class="invader" style="left: 26%; top: 5%;"></div>
+        <div class="invader" style="left: 32%; top: 5%;"></div>
+        <div class="invader" style="left: 38%; top: 5%;"></div>
+        <div class="invader" style="left: 44%; top: 5%;"></div>
+        <div class="invader" style="left: 50%; top: 5%;"></div>
+        <div class="invader" style="left: 56%; top: 5%;"></div>
+        <div class="invader" style="left: 62%; top: 5%;"></div>
+        <div class="invader" style="left: 68%; top: 5%;"></div>
+        <div class="invader" style="left: 74%; top: 5%;"></div>
+
+        <div class="invader" style="left: 20%; top: 14%;"></div>
+        <div class="invader" style="left: 26%; top: 14%;"></div>
+        <div class="invader" style="left: 32%; top: 14%;"></div>
+        <div class="invader" style="left: 38%; top: 14%;"></div>
+        <div class="invader" style="left: 44%; top: 14%;"></div>
+        <div class="invader" style="left: 50%; top: 14%;"></div>
+        <div class="invader" style="left: 56%; top: 14%;"></div>
+        <div class="invader" style="left: 62%; top: 14%;"></div>
+        <div class="invader" style="left: 68%; top: 14%;"></div>
+        <div class="invader" style="left: 74%; top: 14%;"></div>
+
+        <div class="invader" style="left: 20%; top: 23%;"></div>
+        <div class="invader" style="left: 26%; top: 23%;"></div>
+        <div class="invader" style="left: 32%; top: 23%;"></div>
+        <div class="invader" style="left: 38%; top: 23%;"></div>
+        <div class="invader" style="left: 44%; top: 23%;"></div>
+        <div class="invader" style="left: 50%; top: 23%;"></div>
+        <div class="invader" style="left: 56%; top: 23%;"></div>
+        <div class="invader" style="left: 62%; top: 23%;"></div>
+        <div class="invader" style="left: 68%; top: 23%;"></div>
+        <div class="invader" style="left: 74%; top: 23%;"></div>
+
+        <div id="player" style="left: 45%; top: 35%;"></div>
+    </div>
+    <a href="./home.html" <h1 class="fade">PRESS START</h1></a>
+    <a id='learn' href="./about.html">LEARN MORE ABOUT EXTRA-TERRESTRIAL ENCROACHERS</a>
+    
+</body>
+<script>
+    // get reference to player element
+    const player = document.getElementById("player");
+
+    // set initial X position to center of window
+    player.style.left = `${(window.innerWidth - player.offsetWidth) / 2}px`;
+
+    // listen for keydown events on the document
+    document.addEventListener("keydown", event => {
+        // check if A or D key is pressed
+        if (event.key === "a") {
+            // calculate new X position
+            const newX = parseInt(player.style.left || "0") - 10;
+
+            // check if new X position is within the left limit
+            if (newX >= 450) {
+                // move player left
+                player.style.left = `${newX}px`;
+            }
+        } else if (event.key === "d") {
+            // calculate new X position
+            const newX = parseInt(player.style.left || "0") + 10;
+
+            // check if new X position is within the right limit
+            if (newX <= 1950) {
+                // move player right
+                player.style.left = `${newX}px`;
+            }
+        }
+    });
+</script>
+<style type="text/css">
+    html {
+        cursor: url('data:image/x-icon;base64,AAACAAEAICAAAAEAAQCoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/++////HH///gg///0Uf//4ov//8EH///ji///99H////g////0X///4o///8EH//+ii+//FFHH/gggg/0UUUf4ooov8EEEH/iiji/9FF9H/gg/g/0Uf0f4ov4v8EH8H+jj/j/F9/9/g////0f///4v///8H////j////9////8='), auto;
+    }
+</style>
+
+</html>
