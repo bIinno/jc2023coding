@@ -2,26 +2,21 @@
 <html>
 <link href="https://fonts.cdnfonts.com/css/8bit-wonder" rel="stylesheet">
 
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
     <title>Space Invaders</title>
     <style>
-        #learn{
+        #learn {
             font-family: '8BIT WONDER', sans-serif;
             position: absolute;
-            /* set the position to absolute */
             top: 90%;
-            /* position the element at the center of the screen vertically */
             left: 50%;
-            /* position the element at the center of the screen horizontally */
-            transform: translate(-50%, -50%);
-
+            transform: translateX(-50%);
             color: #BF40BF;
-            font-size: 24px;
+            font-size: 1vw;
             text-decoration: underline;
         }
+
         body {
             user-select: none;
             margin: 0;
@@ -33,12 +28,11 @@
         #game-container {
             width: 100vw;
             height: 100vh;
-            display: block;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-
 
         .invader {
             position: absolute;
@@ -72,7 +66,6 @@
 
         nav ul li {
             margin-right: 10px;
-            margin-bottom: 10px;
         }
 
         nav ul li:last-child {
@@ -82,8 +75,8 @@
         nav ul li a {
             text-decoration: none;
             font-weight: bold;
-            font-size: 12px;
-            padding: 12px;
+            font-size: 16px;
+            padding: 10px 15px;
             color: black;
         }
 
@@ -95,16 +88,12 @@
         .fade {
             font-family: '8BIT WONDER', sans-serif;
             position: absolute;
-            /* set the position to absolute */
             top: 50%;
-            /* position the element at the center of the screen vertically */
             left: 50%;
-            /* position the element at the center of the screen horizontally */
             transform: translate(-50%, -50%);
-            /* center the element properly */
             animation: fade 2s infinite;
             color: white;
-            font-size: 72px;
+            font-size: 70px;
             text-decoration: none;
         }
 
@@ -121,9 +110,9 @@
                 opacity: 0;
             }
         }
-
     </style>
 </head>
+
 <body>
     <hr>
     <nav>
@@ -136,6 +125,7 @@
     <hr>
 
     <div id="game-container">
+
         <div class="invader" style="left: 20%; top: 5%;"></div>
         <div class="invader" style="left: 26%; top: 5%;"></div>
         <div class="invader" style="left: 32%; top: 5%;"></div>
