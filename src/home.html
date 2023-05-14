@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
 <link href="https://fonts.cdnfonts.com/css/8bit-wonder" rel="stylesheet">
-
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>Space Invaders</title>
+    <title>Extra-Terrestrial Encroachers</title>
     <style>
         body {
             user-select: none;
@@ -16,43 +13,71 @@
             overflow: hidden;
         }
 
-        nav {
-            font-family: '8BIT WONDER', sans-serif;
-            background-color: #f2f2f2;
-        }
+        #main {
+            margin: 50px auto;
+            text-align: center;
+    }
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
+    img {
+        border: #fff 5px solid;
+    }
 
-        nav ul li {
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
+    #fancy {
+        color: white;
+        font-family: '8BIT WONDER', sans-serif;
+    }
 
-        nav ul li:last-child {
-            margin-right: 0;
-        }
 
-        nav ul li a {
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 12px;
-            padding: 12px;
-            color: black;
-        }
+    #normal {
+        color: white;
+    }
 
-        nav ul li a:hover {
-            background-color: black;
-            color: #fff;
-        }
+    .image-container {
+    display: flex;
+    }
 
-    </style>
+    .image-container > div {
+    flex: 1;
+    text-align: center;
+    margin: 0 10px;
+    }
+
+    nav {
+        font-family: '8BIT WONDER', sans-serif;
+        background-color: #f2f2f2;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    nav ul li {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 12px;
+        color: black;
+    }
+
+    nav ul li a:hover {
+        background-color: black;
+        color: #fff;
+    }
+
+</style>
 </head>
-
 <body>
     <hr>
     <nav>
@@ -63,13 +88,51 @@
         </ul>
     </nav>
     <hr>
-
-
+    <div id="main">
+        <div>
+            <h2 id="fancy">Introduction</h2>
+            <p id="normal">"Extra-Terrestrial Encroachers" is a game developed for the 2023 Junior Cert using MakeCode Arcade. Inspired by classic arcade games like Space Invaders and Galaga, it offers an exciting space shooting experience.</p>
+        </div>
+    
+        <div>
+            <h2 id="fancy">Gameplay</h2>
+            <p id="normal">In "Extra-Terrestrial Encroachers," players take control of a state-of-the-art spaceship to defend Earth from waves of invading aliens.<br>The objective is to shoot down the aliens while skillfully maneuvering the spaceship to avoid their relentless attacks.<br>The game offers a thrilling experience with multiple levels of increasing difficulty, each presenting new challenges and enemy types.<br> The game also features a captivating story mode where players embark on a chase after the aliens who kidnapped their beloved pet duck. It adds an extra layer of excitement and motivation to the gameplay experience.</p>
+        </div>
+    
+        <div>
+            <h2 id="fancy">Features</h2>
+            <p id="normal">- Inspired by classic arcade games Space Invaders and Galaga</p>
+            <p id="normal">- Developed using MakeCode Arcade</p>
+            <p id="normal">- Multiple levels with increasing difficulty</p>
+        </div>
+        <div>
+            <br><br><br><br>
+            <h2 id="fancy">Images</h2>
+            <div class="image-container">
+                <div>
+                    <img src="../img/image5.png" alt="Image 1" width="500">
+                    <p id="normal">Description of Image 1</p>
+                </div>
+                <div>
+                    <img src="../img/image1.png" alt="Image 1" width="500">
+                    <p id="normal">Description of Image 1</p>
+                </div>
+                <div>
+                    <img src="../img/image2.png" alt="Image 2" width="500">
+                    <p id="normal">Description of Image 2</p>
+                </div>
+                <div>
+                    <img src="../img/image3.png" alt="Image 3" width="500">
+                    <p id="normal">Description of Image 3</p>
+                </div>
+            </div>
+        </div>    
+    </div>
+    
 </body>
 <style type="text/css">
     html {
         cursor: url('data:image/x-icon;base64,AAACAAEAICAAAAEAAQCoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/++////HH///gg///0Uf//4ov//8EH///ji///99H////g////0X///4o///8EH//+ii+//FFHH/gggg/0UUUf4ooov8EEEH/iiji/9FF9H/gg/g/0Uf0f4ov4v8EH8H+jj/j/F9/9/g////0f///4v///8H////j////9////8='), auto;
     }
 </style>
-
-</html>
+</html>    
