@@ -24,6 +24,10 @@
             background-color: black;
         }
 
+
+
+
+
         #game-container {
             width: 100vw;
             height: 100vh;
@@ -79,10 +83,21 @@
             color: black;
         }
 
+        nav ul li:nth-child(4) a {
+            color: limegreen;
+        }
+
+
         nav ul li a:hover {
             background-color: black;
             color: #fff;
         }
+
+        nav ul li:nth-child(4) a:hover {
+            background-color: limegreen;
+            color: #fff;
+        }
+
 
         .fade {
             font-family: '8BIT WONDER', sans-serif;
@@ -113,15 +128,20 @@
 </head>
 
 <body>
-    <hr>
-    <nav>
-        <ul>
-            <li><a href="./home.html">Home</a></li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <hr>
+    <div id="navigation">
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li id="play"><a href="">PLAY</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </div>
+
+
 
     <div id="game-container">
 
@@ -162,7 +182,7 @@
     </div>
     <a href="./home.html" <h1 class="fade">PRESS START</h1></a>
     <a id='learn' href="./about.html">LEARN MORE ABOUT EXTRA-TERRESTRIAL ENCROACHERS</a>
-    
+
 </body>
 <script>
     // get reference to player element
