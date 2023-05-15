@@ -25,10 +25,6 @@
             overflow-x: hidden;
         }
 
-
-
-
-
         #game-container {
             width: 100vw;
             height: 100vh;
@@ -45,6 +41,12 @@
             background-repeat: no-repeat;
             width: 5%;
             height: 5%;
+
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        .invader:hover {
+            background-image: url('./img/invader2.png');
         }
 
         #player {
@@ -57,9 +59,12 @@
         }
 
         nav {
+            padding: 5px 0;
             font-family: '8BIT WONDER', sans-serif;
+            height: 20px;
             background-color: #f2f2f2;
         }
+
 
         nav ul {
             list-style: none;
@@ -85,7 +90,9 @@
         }
 
         nav ul li:nth-child(4) a {
-            color: limegreen;
+            background-color: limegreen;
+
+            color: white;
         }
 
 
@@ -95,7 +102,7 @@
         }
 
         nav ul li:nth-child(4) a:hover {
-            background-color: limegreen;
+            background-color: rgb(11, 71, 11);
             color: #fff;
         }
 
@@ -110,11 +117,16 @@
             color: white;
             font-size: 70px;
             text-decoration: none;
+
+            transition: text-shadow 0.5s ease-in-out;
+
+            text-shadow: none;
+            animation: fade 1.5s infinite;
         }
 
         @keyframes fade {
             0% {
-                opacity: 0;
+                opacity: 0.5;
             }
 
             50% {
@@ -122,15 +134,41 @@
             }
 
             100% {
-                opacity: 0;
+                opacity: 0.5;
             }
+        }
+
+        .fade:hover {
+            animation-play-state: paused;
+            opacity: 1 !important;
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.5),
+                0 0 4px rgba(255, 255, 255, 0.5),
+                0 0 6px rgba(255, 255, 255, 0.5),
+                0 0 8px rgba(255, 255, 255, 0.5),
+                0 0 14px rgba(255, 255, 255, 0.5),
+                0 0 16px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.5),
+                0 0 30px rgba(255, 255, 255, 0.5);
+        
+        }
+
+
+
+
+        footer {
+            font-family: '8BIT WONDER', sans-serif;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            color: white;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
     <div id="navigation">
-        <hr>
         <nav>
             <ul>
                 <li><a href="./home.html">Home</a></li>
@@ -139,7 +177,6 @@
                 <li id="play"><a href="">PLAY</a></li>
             </ul>
         </nav>
-        <hr>
     </div>
 
 
@@ -184,6 +221,12 @@
     <a href="./home.html" <h1 class="fade">PRESS START</h1></a>
     <a id='learn' href="./about.html">LEARN MORE ABOUT EXTRA-TERRESTRIAL ENCROACHERS</a>
 
+    // Footer
+    <footer>
+        <hr>
+        <p style="color: white;">© 2023 Surobasaski</p>
+        <hr>
+    </footer>
 </body>
 <script>
     // get reference to player element
@@ -200,7 +243,7 @@
             const newX = parseInt(player.style.left || "0") - 10;
 
             // check if new X position is within the left limit
-            if (newX >= 450) {
+            if (newX >= 0) {
                 // move player left
                 player.style.left = `${newX}px`;
             }
@@ -209,7 +252,7 @@
             const newX = parseInt(player.style.left || "0") + 10;
 
             // check if new X position is within the right limit
-            if (newX <= 1950) {
+            if (newX <= (window.innerWidth - player.offsetWidth)) {
                 // move player right
                 player.style.left = `${newX}px`;
             }
@@ -218,29 +261,29 @@
 </script>
 <script>
     const invaders = document.querySelectorAll(".invader");
-  
+
     invaders.forEach(invader => {
-      // Set initial position values
-      const initialTop = parseFloat(invader.dataset.initialTop) || 0;
-      const originalTop = parseFloat(invader.style.top) || 0;
-  
-      // Set movement variables
-      const amplitude = 0.75; // Maximum vertical distance from the original position
-      const period = 2000; // Time in milliseconds for one complete cycle
-      const speed = 0.2; // Speed of the bobbing motion
-  
-      // Update invader position periodically
-      setInterval(() => {
-        // Calculate new position based on sine function
-        const elapsedTime = Date.now();
-        const verticalOffset = Math.sin((elapsedTime / period) * 2 * Math.PI * speed) * amplitude;
-        const newTop = originalTop + verticalOffset;
-  
-        // Update invader position
-        invader.style.top = `${newTop}%`;
-      }, 16); // Adjust the interval time as needed (60 FPS: 1000ms / 60 = 16.67ms)
+        // Set initial position values
+        const initialTop = parseFloat(invader.dataset.initialTop) || 0;
+        const originalTop = parseFloat(invader.style.top) || 0;
+
+        // Set movement variables
+        const amplitude = 0.75; // Maximum vertical distance from the original position
+        const period = 2000; // Time in milliseconds for one complete cycle
+        const speed = 0.2; // Speed of the bobbing motion
+
+        // Update invader position periodically
+        setInterval(() => {
+            // Calculate new position based on sine function
+            const elapsedTime = Date.now();
+            const verticalOffset = Math.sin((elapsedTime / period) * 2 * Math.PI * speed) * amplitude;
+            const newTop = originalTop + verticalOffset;
+
+            // Update invader position
+            invader.style.top = `${newTop}%`;
+        }, 16); // Adjust the interval time as needed (60 FPS: 1000ms / 60 = 16.67ms)
     });
-  </script>
+</script>
 <style type="text/css">
     html {
         cursor: url('data:image/x-icon;base64,AAACAAEAICAAAAEAAQCoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7AgRxOwIP8TsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABOwIEcTsCD/E7Ag/xOwIP8TsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE7Ag/xOwIP8TsCD/E7Ag/xOwIP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIP8TsCD/E7AgRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATsCBHE7Ag/xOwIEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/++////HH///gg///0Uf//4ov//8EH///ji///99H////g////0X///4o///8EH//+ii+//FFHH/gggg/0UUUf4ooov8EEEH/iiji/9FF9H/gg/g/0Uf0f4ov4v8EH8H+jj/j/F9/9/g////0f///4v///8H////j////9////8='), auto;
