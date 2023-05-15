@@ -13,7 +13,19 @@
             margin: 0;
             padding: 0;
             background-color: black;
-            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 4vh;
+        }
+
+        #final {
+            padding: 5vh;
+            border: 5px white solid;
+        }
+
+        #final ul {
+            list-style-type: none;
         }
 
 
@@ -26,8 +38,14 @@
             color: white;
             font-family: '8BIT WONDER', sans-serif;
         }
+
+        #item {
+            color: greenyellow;
+            font-family: '8BIT WONDER', sans-serif;
+        }
+
         #normal {
-            color:  white;
+            color: white;
 
         }
 
@@ -65,6 +83,20 @@
             color: #fff;
         }
 
+        .image-container {
+            display: flex;
+        }
+
+        .image-container>div {
+            flex: 1;
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        img {
+            border: #fff 5px solid;
+            max-width: 80%;
+        }
     </style>
 </head>
 
@@ -81,23 +113,105 @@
 
     <div id="main">
         <div>
-            <h2 id="fancy">Section 1</h2>
-            <p id="normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum magna vitae tincidunt venenatis. Aenean aliquet, felis sed gravida ultrices, felis erat dignissim arcu, in convallis magna nibh eu nisi. Cras mauris sapien, aliquet lacinia neque nec, pulvinar fermentum dolor. Vivamus enim ipsum, lobortis quis dapibus vel, gravida non ante. Mauris elit magna, efficitur vitae justo nec, consequat sollicitudin augue. Aliquam elementum suscipit nunc, placerat vehicula lorem volutpat vitae. Aenean id pharetra orci. Donec a felis eget metus dignissim scelerisque. Morbi nibh magna, faucibus vitae nisi consectetur, faucibus rutrum magna. Maecenas placerat ultrices lectus, sit amet cursus diam pulvinar id. In porta tempus scelerisque. Mauris sed interdum justo, nec egestas ipsum. Proin tortor turpis, gravida ac purus vel, elementum blandit ipsum.
-    
-                In molestie feugiat pharetra. Nulla elementum porta felis, nec convallis turpis porta vel. Fusce lacinia felis semper ligula rutrum hendrerit. Etiam dictum eleifend dapibus. Fusce hendrerit tellus metus, in mollis purus auctor ut. Suspendisse auctor vehicula libero a sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas turpis massa, accumsan vitae interdum at, consequat sit amet sapien. Sed tempus, arcu quis hendrerit sagittis, metus tellus vulputate libero, tempor volutpat lorem ligula ornare ligula. Praesent imperdiet urna nec mauris ullamcorper, at bibendum nisi volutpat. Aliquam condimentum metus quis turpis volutpat tristique. Proin laoreet ante velit, a porttitor nunc feugiat at. Donec mattis nisi ipsum, at ultrices diam aliquam ornare.</p>
+            <h2 id="fancy">Our Story</h2>
+            <p id="normal">Developed by the finest developers, Extra-Terrestrial Encroachers is a hit game made by three
+                Junior Cert students using MakeCode Arcade, Microsofts free block coding software. <br>
+                With a six week limit, these three students were able to make a game that incorporates groundbreaking
+                movement, tremendous graphics, and a truly inspiring story.
+
+                The development began how every triple A game developer thinks of a new and creative way to manufacture
+                something new, unique and never-seen before. With a brainstorm.
+                <strong>John Bernard Basanes, Maksymilian Surowiec and Hubert Kozłowski</strong> gathered together to
+                think of a few quick ideas for their coding CBA.
+                While everyone else was thinking of platformer games, and maze games, this legendary trio had a
+                completely different idea.
+                They were going to make a Space Shooter game, and nothing was going to stop them.</p>
         </div>
 
         <div>
-            <h2 id="fancy">Section 2</h2>
-            <p id="normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum magna vitae tincidunt venenatis. Aenean aliquet, felis sed gravida ultrices, felis erat dignissim arcu, in convallis magna nibh eu nisi. Cras mauris sapien, aliquet lacinia neque nec, pulvinar fermentum dolor. Vivamus enim ipsum, lobortis quis dapibus vel, gravida non ante. Mauris elit magna, efficitur vitae justo nec, consequat sollicitudin augue. Aliquam elementum suscipit nunc, placerat vehicula lorem volutpat vitae. Aenean id pharetra orci. Donec a felis eget metus dignissim scelerisque. Morbi nibh magna, faucibus vitae nisi consectetur, faucibus rutrum magna. Maecenas placerat ultrices lectus, sit amet cursus diam pulvinar id. In porta tempus scelerisque. Mauris sed interdum justo, nec egestas ipsum. Proin tortor turpis, gravida ac purus vel, elementum blandit ipsum.</p>
-            <iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVMJQd4cE=/?moveToViewport=-471,-201,883,445&embedId=661050212929" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
-        </div>
+            <h2 id="fancy">Development</h2>
+            <p id="normal">They quickly began to scribble down their ideas on scrunched up scraps of paper.
+                They knew that this was going to be a success, and nothing was going to stop them from achieving it.
+                However, they soon began to realise that there was a massive flaw in their plan.
+                Not everything would be able to be implemented into their game, as not everything would work well
+                together. </p>
 
+            <p id="normal">The trio compromised, and each member of the development team chose three of their best ideas
+                to be put into the game.
+                They believed that this would be the best way to go.</p>
 
+            <p id="normal"><strong>John Bernard</strong> chose to add an interesting story to the game, chose the game
+                to be in space, and for there to be a final boss in the game.</p>
+            <p id="normal"><strong>Maksymilian</strong> decided to add different types of enemies, such as asteroids,
+                and varying types of aliens that would have to be fought. He also thought of implementing lives, and a
+                score system to the game.</p>
+            <p id="normal">And finally, <strong>Hubert</strong> decided to go above and beyond, and make a custom,
+                multipage website for the project. He thought of the menu screen, the artstyle for the game, and many
+                other crucial elements of the game. </p>
+            <p id="normal">And so, the development began. John Bernard created a Google Docs document for the team to be
+                able to track their progress.
+                <strong>John Bernard</strong> and <strong>Maksymilian</strong> worked hand-in-hand to work at maximum
+                efficiency, as Hubert managed to finish the website in record-breaking time.
+                Everything was going to plan. As one student was busy, the other was bug testing and problem solving.
+                It was as if they were performing a perfect symphony, working in harmony.
+                It was a <i>heavenly sight</i>, some might say. </p>
+
+            <p id="normal"><strong>Below are some images of the code created by John Bernard Basanes and Maksymilian
+                    Surowiec.</strong></p>
+
+            <div>
+                <br>
+                <h2 id="fancy">Game Code</h2>
+                <div class="image-container">
+                    <div>
+                        <img src="./img/placeholder.png" alt="Image 1">
+                        <p id="normal">Description of Image 1</p>
+                    </div>
+                    <div>
+                        <img src="./img/placeholder.png" alt="Image 1">
+                        <p id="normal">Description of Image 1</p>
+                    </div>
+                    <div>
+                        <img src="./img/placeholder.png" alt="Image 1">
+                        <p id="normal">Description of Image 1</p>
+                    </div>
+                </div>
+            </div>
+
+            <p id="normal"><strong>And even further down, you can find some images of the code for this website, written by Hubert Kozłowski.</strong></p>
+            <div>
+                <br>
+                <h2 id="fancy">Website Code</h2>
+                <div class="image-container">
+                    <div>
+                        <img src="./img/placeholder.png" alt="Image 1">
+                        <p id="normal">Description of Image 1</p>
+                    </div>
+                    <div>
+                        <img src="./img/placeholder.png" alt="Image 1">
+                        <p id="normal">Description of Image 1</p>
+                    </div>
+                </div>
+            </div>
+            <div id="final">
+                <h1 id="fancy">Final Thoughts<h1></h1>
+                <p id="normal">What we each thought of the game we managed to produce.<br></p>
+                <ul>
+                    <li id="item"><strong>Maksymilian Surowiec:</strong></li>
+                    <p id="normal">Overall, I think that this project was a huge success. Not only did we create a fully functioning game, we also created a game that each of us had an influence over the development, and manufacturing of the game. I can't think of how I would be able to do this project by myself. Looking back, I wish we had a little teeny tiny bit more time, just to polish a few bits and pieces, but other than that, the game came out better than I ever would have imagined. If I were to do anything differently, I would try to code faster, and try to not make the same mistakes over and over again, which would save us a lot of time.</p>
+
+                    <li id="item"><strong>John Bernard Basanes:</strong></li>
+                    <p id="normal">Overall, I think that this project was a huge success. Not only did we create a fully functioning game, we also created a game that each of us had an influence over the development, and manufacturing of the game. I can't think of how I would be able to do this project by myself. Looking back, I wish we had a little teeny tiny bit more time, just to polish a few bits and pieces, but other than that, the game came out better than I ever would have imagined. If I were to do anything differently, I would try to code faster, and try to not make the same mistakes over and over again, which would save us a lot of time.</p>
+
+                    <li id="item"><strong>Hubert Kozlowski:</strong></li>
+                    <p id="normal">Overall, I think that this project was a huge success. Not only did we create a fully functioning game, we also created a game that each of us had an influence over the development, and manufacturing of the game. I can't think of how I would be able to do this project by myself. Looking back, I wish we had a little teeny tiny bit more time, just to polish a few bits and pieces, but other than that, the game came out better than I ever would have imagined. If I were to do anything differently, I would try to code faster, and try to not make the same mistakes over and over again, which would save us a lot of time.</p>
+                </ul>
+            </div>
+            
     </div>
 
-    
-    
+
+
 
 
 </body>
