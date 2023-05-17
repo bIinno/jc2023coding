@@ -28,10 +28,13 @@
             list-style-type: none;
         }
 
+        
         #img1{
-            float: left; 
+            float: left;
+            margin-right: 2vh;
             border: none;
         }
+
         #img2{
             float: right;
             border: none;
@@ -46,12 +49,51 @@
         #fancy {
             color: white;
             font-family: '8BIT WONDER', sans-serif;
+            transition: text-shadow 0.5s ease-in-out;
+
+            text-shadow: none;
         }
 
-        #item {
+        #fancy:hover {
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.5),
+                0 0 4px rgba(255, 255, 255, 0.5),
+                0 0 6px rgba(255, 255, 255, 0.5),
+                0 0 8px rgba(255, 255, 255, 0.5),
+                0 0 14px rgba(255, 255, 255, 0.5),
+                0 0 16px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.5),
+                0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        #item1 {
+            color: pink;
+            font-family: '8BIT WONDER', sans-serif;
+        }
+
+        #item2 {
             color: greenyellow;
             font-family: '8BIT WONDER', sans-serif;
         }
+
+        #item3 {
+            color: purple;
+            font-family: '8BIT WONDER', sans-serif;
+            transition: text-shadow 0.5s ease-in-out;
+            text-shadow: none;
+        }
+
+        #item3:hover {
+            text-shadow: 0 0 2px #bf00ff80,
+                0 0 4px #bf00ff80,
+                0 0 6px #bf00ff80,
+                0 0 8px #bf00ff80,
+                0 0 14px #bf00ff80,
+                0 0 16px #bf00ff80,
+                0 0 20px #bf00ff80,
+                0 0 30px #bf00ff80;
+        }
+
+
 
         #normal {
             color: white;
@@ -59,9 +101,12 @@
         }
 
         nav {
+            padding: 5px 0;
             font-family: '8BIT WONDER', sans-serif;
+            height: 20px;
             background-color: #f2f2f2;
         }
+
 
         nav ul {
             list-style: none;
@@ -72,7 +117,6 @@
 
         nav ul li {
             margin-right: 10px;
-            margin-bottom: 10px;
         }
 
         nav ul li:last-child {
@@ -82,13 +126,25 @@
         nav ul li a {
             text-decoration: none;
             font-weight: bold;
-            font-size: 12px;
-            padding: 12px;
+            font-size: 16px;
+            padding: 10px 15px;
             color: black;
         }
 
+        nav ul li:nth-child(4) a {
+            background-color: limegreen;
+
+            color: white;
+        }
+
+
         nav ul li a:hover {
             background-color: black;
+            color: #fff;
+        }
+
+        nav ul li:nth-child(4) a:hover {
+            background-color: rgb(11, 71, 11);
             color: #fff;
         }
 
@@ -116,6 +172,7 @@
             <li><a href="./home.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
             <li><a href="./contact.html">Contact</a></li>
+            <li id="play"><a href="https://arcade.makecode.com/S73986-15543-13398-42706" target="_blank">PLAY</a></li>
         </ul>
     </nav>
     <hr>
@@ -173,16 +230,16 @@
                 <h2 id="fancy">Game Code</h2>
                 <div class="image-container">
                     <div>
-                        <img src="./img/placeholder.png" alt="Image 1">
-                        <p id="normal">Description of Image 1</p>
+                        <img src="./img/screenshot-game1.png" alt="Image 1" >
+                        <p id="normal">Smooth movement code, which functions by spawning an invisible object <br> which the player image then follows.</p>
                     </div>
                     <div>
-                        <img src="./img/placeholder.png" alt="Image 1">
-                        <p id="normal">Description of Image 1</p>
+                        <img src="./img/screenshot-game2.png" alt="Image 1" >
+                        <p id="normal">Menu navigation code so that when you press UP or DOWN keys it changes which option you have selected in the menu. </p>
                     </div>
                     <div>
-                        <img src="./img/placeholder.png" alt="Image 1">
-                        <p id="normal">Description of Image 1</p>
+                        <img src="./img/screenshot-game3.png" alt="Image 1" >
+                        <p id="normal">Level selection code, once you get past the initial menu, you have to select the specific level you wish to play. When you decide, it loads your selected level to be played.</p>
                     </div>
                 </div>
             </div>
@@ -193,12 +250,12 @@
                 <h2 id="fancy">Website Code</h2>
                 <div class="image-container">
                     <div>
-                        <img src="./img/placeholder.png" alt="Image 1">
-                        <p id="normal">Description of Image 1</p>
+                        <img src="./img/screenshot-web1.png" alt="Image 1">
+                        <p id="normal">The code that makes the "player" on the initial index.html page<br> move when A or D is pressed.</p>
                     </div>
                     <div>
-                        <img src="./img/placeholder.png" alt="Image 1">
-                        <p id="normal">Description of Image 1</p>
+                        <img src="./img/screenshot-web2.png" alt="Image 1">
+                        <p id="normal">The code that animates a "glow" effect <br> onto heading text when it is hovered over</p>
                     </div>
                 </div>
             </div>
@@ -208,14 +265,14 @@
                 <h1 id="fancy">Final Thoughts<h1></h1>
                 <p id="normal">What we each thought of the game we managed to produce.<br></p>
                 <ul>
-                    <li id="item"><strong>Maksymilian Surowiec:</strong></li>
+                    <li id="item1"><strong>Maksymilian Surowiec:</strong></li>
                     <p id="normal">Overall, I think that this project was a huge success. Not only did we create a fully functioning game, we also created a game that each of us had an influence over the development, and manufacturing of the game. I can't think of how I would be able to do this project by myself. Looking back, I wish we had a little teeny tiny bit more time, just to polish a few bits and pieces, but other than that, the game came out better than I ever would have imagined. If I were to do anything differently, I would try to code faster, and try to not make the same mistakes over and over again, which would save us a lot of time.</p>
 
-                    <li id="item"><strong>John Bernard Basanes:</strong></li>
-                    <p id="normal">Overall, I think that this project was a huge success. Not only did we create a fully functioning game, we also created a game that each of us had an influence over the development, and manufacturing of the game. I can't think of how I would be able to do this project by myself. Looking back, I wish we had a little teeny tiny bit more time, just to polish a few bits and pieces, but other than that, the game came out better than I ever would have imagined. If I were to do anything differently, I would try to code faster, and try to not make the same mistakes over and over again, which would save us a lot of time.</p>
+                    <li id="item2"><strong>John Bernard Basanes:</strong></li>
+                    <p id="normal">It found it really exciting to make this game. I thought the fact that MakeCode Arcade did not allow multiple people to work on a project at once would become a barrier for us but we easily overcame it. I honestly didn't think the game would turn out this good but we made it happen. I really enjoyed creating the sheet music for the game.</p>
 
-                    <li id="item"><strong>Hubert Kozlowski:</strong></li>
-                    <p id="normal">Overall, I think that this project was a huge success. Not only did we create a fully functioning game, we also created a game that each of us had an influence over the development, and manufacturing of the game. I can't think of how I would be able to do this project by myself. Looking back, I wish we had a little teeny tiny bit more time, just to polish a few bits and pieces, but other than that, the game came out better than I ever would have imagined. If I were to do anything differently, I would try to code faster, and try to not make the same mistakes over and over again, which would save us a lot of time.</p>
+                    <li id="item3"><strong>Hubert Kozlowski:</strong></li>
+                    <p id="normal">Looking back, I recognize that there were areas where I could have improved. For instance, I could have delegated tasks more effectively and streamlined communication channels to foster greater efficiency within the team. Nonetheless, I am proud of the unique perspective I brought to the project and the positive impact it had on the game's overall quality.</p>
                 </ul>
             </div>
             

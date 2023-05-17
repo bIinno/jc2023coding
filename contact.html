@@ -27,36 +27,50 @@
         }
     
         nav {
+            padding: 5px 0;
             font-family: '8BIT WONDER', sans-serif;
+            height: 20px;
             background-color: #f2f2f2;
         }
-    
+
+
         nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
         }
-    
+
         nav ul li {
             margin-right: 10px;
-            margin-bottom: 10px;
         }
-    
+
         nav ul li:last-child {
             margin-right: 0;
         }
-    
+
         nav ul li a {
             text-decoration: none;
             font-weight: bold;
-            font-size: 12px;
-            padding: 12px;
+            font-size: 16px;
+            padding: 10px 15px;
             color: black;
         }
-    
+
+        nav ul li:nth-child(4) a {
+            background-color: limegreen;
+
+            color: white;
+        }
+
+
         nav ul li a:hover {
             background-color: black;
+            color: #fff;
+        }
+
+        nav ul li:nth-child(4) a:hover {
+            background-color: rgb(11, 71, 11);
             color: #fff;
         }
     
@@ -96,6 +110,7 @@
             <li><a href="./home.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
             <li><a href="./contact.html">Contact</a></li>
+            <li id="play"><a href="https://arcade.makecode.com/S73986-15543-13398-42706" target="_blank">PLAY</a></li>
         </ul>
     </nav>
     <hr>
